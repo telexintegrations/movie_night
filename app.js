@@ -14,6 +14,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.get('/', (req, res) => res.send('Telex integration is up and active!'));
+
 
 app.get('/integration.json', (req, res) => {
     const baseUrl = req.protocol + '://' + req.get('host');
@@ -40,7 +42,8 @@ app.get('/integration.json', (req, res) => {
             settings: [
                 { label: "interval", type: "text", required: true, default: '0 18 * * *' }
             ],
-            tick_url: `${baseUrl}/tick`
+            tick_url: `${baseUrl}/tick`,
+            target_url: "https://api.telex.im/v1/webhooks/01952b0a-718b-70d4-a5d7-16989f054326",
         }
 
 
