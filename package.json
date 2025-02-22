@@ -1,7 +1,11 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "test": "mocha --require dotenv/config server.test.js"
+  },
+  "jest": {
+    "verbose": true
   },
   "dependencies": {
     "axios": "^1.7.9",
@@ -10,5 +14,12 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "chai-http": "^5.1.1",
+    "mocha": "^11.1.0",
+    "sinon": "^19.0.2",
+    "supertest": "^7.0.0"
   }
 }
